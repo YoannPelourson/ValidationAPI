@@ -7,58 +7,38 @@ $(document).ready(function() {
       if (document.querySelectorAll('#rip').length > 0) {
         let id = document.getElementById('rip')
         id.remove('div');
-      }
-      
-      
+      };
       
       let container = document.createElement('div');
       container.setAttribute('id', "rip");
-      
       
       let list = document.createElement('ul');
       list.classList.add('ul-beer');
 
       for (let i = 0; i < beerData.length; i++) {
 
-        
-      
-      let listElement = document.createElement('li');
-     
-      
+      let listElement = document.createElement('li'); 
       listElement.classList.add('beerList');
-      
-
-      //let nameB = beerData[i].name;
-      
       listElement.innerHTML = beerData[i].name;
       listElement.dataset.id = beerData[i].id;
-      
-      
       container.appendChild(list);
       list.appendChild(listElement);
-      
       document.querySelector('#resultList').appendChild(container);
-      
 
+       };
 
-      
-      
-    };
     });
+
  });
 
- //function describeBeer(beerData){
-   //let beerID = beerData[i].id;
-   
   $('body').on('click', '.beerList', function(){
-
-   
+  
     $.get(('https://api.punkapi.com/v2/beers/' + this.dataset.id ), function(beerInfo){
     
       if (document.querySelectorAll('#rip').length > 0) {
         let id = document.getElementById('rip')
         id.remove('div');
-      }
+      };
 
      let container = document.createElement('div');
      container.setAttribute('id', "rip");
@@ -70,8 +50,7 @@ $(document).ready(function() {
        let yearP = document.createElement('p');
        let descriptionP = document.createElement('p');
        let foodP = document.createElement('p');
-
-       
+ 
        nameH.innerHTML = beerInfo[i].name;
        abvP.innerHTML = "Degré d'alcool :" + beerInfo[i].abv + "°";
        tipsP.innerHTML = "Conseils du brasseur :" + beerInfo[i].brewers_tips;
@@ -87,19 +66,13 @@ $(document).ready(function() {
        container.appendChild(foodP);
  
        document.querySelector('#resultList').appendChild(container);
-       /*document.querySelector('#resultList').appendChild(abvP);
-       document.querySelector('#resultList').appendChild(tipsP);
-       document.querySelector('#resultList').appendChild(yearP);
-       document.querySelector('#resultList').appendChild(descriptionP);
-       document.querySelector('#resultList').appendChild(foodP);*/
        
-       
-     }
-    })
+      };
+
+    });
     
   });
 
- //}
     $('#b').on('click',function(){
 
       $.get('https://api.punkapi.com/v2/beers/random',function(randoBeer){
@@ -107,11 +80,9 @@ $(document).ready(function() {
         if (document.querySelectorAll('#rip').length > 0) {
           let id = document.getElementById('rip')
           id.remove('div');
-        }
+        };
         
-        
-
-      for (let i = 0; i < randoBeer.length; i++) {
+        for (let i = 0; i < randoBeer.length; i++) {
 
         let container = document.createElement('div');
         container.setAttribute('id', "rip");
@@ -142,17 +113,11 @@ $(document).ready(function() {
 
        document.querySelector('#resultList').appendChild(container);
 
-       /*document.querySelector('#resultList').appendChild(nameH);
-       document.querySelector('#resultList').appendChild(abvP);
-       document.querySelector('#resultList').appendChild(tipsP);
-       document.querySelector('#resultList').appendChild(yearP);
-       document.querySelector('#resultList').appendChild(descriptionP);
-       document.querySelector('#resultList').appendChild(foodP);
-       document.querySelector('#resultList').appendChild(phP);*/
-       
-      }
-      })
-    })
+      };
+
+      });
+
+    });
 
     $('#c').on('click', function(){
    
@@ -163,8 +128,6 @@ $(document).ready(function() {
           id.remove('div');
         }
         
-        
-        
         let container = document.createElement('div');
         container.setAttribute('id', "rip");
         
@@ -172,47 +135,33 @@ $(document).ready(function() {
         list.classList.add('ul-beer');
   
         for (let i = 0; i < hardBeerData.length; i++) {
-  
-          
-          
+    
         let listElement = document.createElement('li');
-       
-        
-        listElement.classList.add('hardBeerList');
-        
-  
-        //let nameB = beerData[i].name;
-        
+             
+        listElement.classList.add('hardBeerList'); 
         listElement.innerHTML = hardBeerData[i].name;
         listElement.dataset.id = hardBeerData[i].id;
-        
         
         container.appendChild(list);
         list.appendChild(listElement);
         
         document.querySelector('#resultList').appendChild(container);
         
-  
-  
-        
-        
-      };
+       };
+
       });
+
    });
 
     $('body').on('click', '.hardBeerList', function(){
       
       $.get(('https://api.punkapi.com/v2/beers/' + this.dataset.id),function(hardBeer){
 
-      
-
-      
         if (document.querySelectorAll('#rip').length > 0) {
           let id = document.getElementById('rip')
           id.remove('div');
-        }
+        };
         
-
         for (let i = 0; i < hardBeer.length; i++) {
           
           let container = document.createElement('div');
@@ -238,9 +187,11 @@ $(document).ready(function() {
 
           document.querySelector('#resultList').appendChild(container);
           
-        }
-      })
-    })
+        };
+
+      });
+
+    });
  
   
 });
