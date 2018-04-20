@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+}
+
+h2{
+  text-align: center;
+  color: red;
+}
+header{
+  
+}
+.lore{
+  position: fixed;
+  left: 10%;
+}
+.beerList, .hardBeerList{
+  list-style: none;
+  
+}
+.ul-beer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+li:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+#buttonList ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+#buttonList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 20vh;
+  align-items: center;
+  
+  background-color: rgba(233, 184, 55, 0.8);
+  border-bottom: 1px solid #043927;
+}
+#resultList {
+  width: 100vw;
+  height: 80vh;
+  /* Change the color */
+  
+  background-color: #F8F8F0;
+  overflow: scroll;
+}
